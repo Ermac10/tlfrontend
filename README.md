@@ -35,13 +35,9 @@ An app that allows the user to create logs describing troubleshooting activities
 ![ERD](public/ERD.png)
 
 # Screenshots
-![WelcomePage](Public/Images/welcomePageScreenShot.png)
-![UserProfile](Public/Images/userProfileScreenShot.png)
-![BagPeak](Public/Images/bagNewPeakScreenShot.png)
-![EditPeak](Public/Images/editPeakScreenShot.png)
-![ShowPeak](Public/Images/showPeakScreenShot.png)
+
 
 # Getting Started
-[https://enigmatic-headland-75179.herokuapp.com/] () to use the Turbine Log Book
+[] () to use the Turbine Log Book
 
 # Future Enhancements
