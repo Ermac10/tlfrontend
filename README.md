@@ -32,7 +32,7 @@ An app that allows the user to create logs describing troubleshooting activities
 [https://ericgarcia673719.invisionapp.com/freehand/Turbine-Log-Book-SnAou89Gz?dsid_h=098452f4e91e4d948738337de7c7cfe2bfed6f816ae7c6df4aa46236699a8cb4&uid_h=ebcf470fb42468d94ba9d3c44f928f81e8c75906310a5da023c1a113b290dc1b] () to see the wire frame
 
 # Entity Relationship Diagram
-![ERD](tlfrontend/tlfrontend/public/Screen Shot 2022-08-25 at 6.57.53 PM.png)
+![ERD](tlfrontend/public/ERD.png)
 
 # Screenshots
 ![WelcomePage](Public/Images/welcomePageScreenShot.png)
