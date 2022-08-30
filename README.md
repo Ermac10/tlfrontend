@@ -38,8 +38,9 @@ An app that allows the user to create logs describing troubleshooting activities
 
 
 # Getting Started
-[] () to use the Turbine Log Book
-[https://github.com/Ermac10/tlbackend.git] () to view the backend code
-[https://github.com/Ermac10/tlfrontend.git] () to view the frontend code
+[Click Here] (https://github.com/Ermac10/tlbackend.git) to use the Turbine Log Book
+[] () to view the backend code
+
+[Click Here] (https://github.com/Ermac10/tlfrontend.git) to view the frontend code
 
 # Future Enhancements
