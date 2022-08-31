@@ -22,7 +22,6 @@ function LogPage({ Logs, deleteLog, updateLog }) {
   const log = Logs.find(p =>p._id === id)
 
   const handleDelete = () => {
-    console.log("delete")
     deleteLog(id)
     navigate('/')
   }
@@ -32,7 +31,6 @@ function LogPage({ Logs, deleteLog, updateLog }) {
       ...prevState,
       [event.target.name]: event.target.value
     }))
-    console.log(updateForm)
   }
   const handleUpdate = event => {
     event.preventDefault()
@@ -46,10 +44,11 @@ function LogPage({ Logs, deleteLog, updateLog }) {
 
   return (
   <div className='log'>
-    <h1>{log.component}</h1>
+    <h1 className='log-name'>{log.component}</h1>
     {/* <img className='log-image' src={log.image} alt={log.component} /> */}
-    <button onClick={handleDelete}>Delete This Log</button>
-    <form onSubmit={handleUpdate}>
+    
+    <form onSubmit={handleUpdate} className="create-log">
+   
     {/* <input 
             type="text"
             value={updateForm.returned}
@@ -57,55 +56,94 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             name="returned"
             placeholder="Yes or No"
         /><br /> */}
+    <div className="input-left">
+    <label>
+        Component Name 
+        <select className='component'
+          type="text"
+          value={updateForm.component}
+          onChange={handleChange}
+          name="component">
+            <option value='hi'> -- Select a Component -- </option>
+            {data.map((component) => <option key={component.component}value={component.component}>{component.component}</option>)}
+           
+            </select>
+            
+            </label><br />
+    <label>
+        Start Time
     <input 
-            type="text"
-            value={updateForm.component}
-            onChange={handleChange}
-            name="component"
-            placeholder="Yaw motor"
-        /><br />
-    <input 
-            type="text"
+            type="time"
             value={updateForm.start}
             onChange={handleChange}
             name="start"
             placeholder="8:00am"
-        /><br />
+        /></label><br />
+        <label>
+          End Time
          <input 
-            type="text"
+            type="time"
             value={updateForm.end}
             onChange={handleChange}
             name="end"
             placeholder="4:00pm"
+        /></label><br />
+        </div>
+        <div className="input-center">
+        <button onClick={handleDelete}>Delete This Log</button>
+        <label>
+          Log Entry
+        <textarea 
+            value={updateForm.log}
+            onChange={handleChange}
+            name="log"
+            placeholder="Happy Turbine"
+            rows={10}
+            style={{width:'100%', margin:'auto'}}
+        /></label><br />
+          <input 
+            type="submit"
+            value="Update Log"
+            style={{marginTop:'0px'}}
         /><br />
+        </div>
+        <div className="input-right">
+        <label>
+        Voltage Reading
         <input 
-            type="text"
+            type="number"
             value={updateForm.volts}
             onChange={handleChange}
             name="volts"
             placeholder="120V"
-        /><br />
+        />V</label><br />
+         <label>
+          Amperage Reading
          <input 
-            type="text"
+            type="number"
             value={updateForm.amps}
             onChange={handleChange}
             name="amps"
             placeholder="20A"
-        /><br />
+        />A</label><br />
+          <label>
+          Pressure Reading
           <input 
-            type="text"
+            type="number"
             value={updateForm.pressure}
             onChange={handleChange}
             name="pressure"
-            placeholder="200PSI"
-        /><br />
+            placeholder="200Bar"
+        />Bar</label><br />
+        <label>
+          Ohm Reading
         <input 
-            type="text"
+            type="number"
             value={updateForm.ohms}
             onChange={handleChange}
             name="ohms"
             placeholder="200ohms"
-        /><br />
+        />Ohms</label><br />
         {/* <input 
             type="text"
             value={updateForm.image}
@@ -113,17 +151,9 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             name="image"
             placeholder="Happy Turbine.png"
         /><br />  */}
-          <textarea 
-            value={updateForm.log}
-            onChange={handleChange}
-            name="log"
-            placeholder="Happy Turbine"
-            rows={20}
-        /><br />
-         <input 
-            type="submit"
-            value="Update Log"
-        /><br />
+        </div>
+        
+       
     </form>
   </div>
     );

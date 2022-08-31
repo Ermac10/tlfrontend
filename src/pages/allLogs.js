@@ -5,7 +5,7 @@ function AllLogs(props) {
 const loaded = () => {
     return props.Logs.map(({ component, log, image, start, end, volts, amps, pressure, ohms, returned, _id}) => {
       return (
-        <div className='log' key={_id}>
+        <div className='all-logs' key={_id}>
             <Link to={`/logs/${_id}`}>
                 <h1>{component}</h1>
             </Link>
@@ -24,7 +24,6 @@ const loaded = () => {
 return (
     <>
       {props.Logs ? loaded() : loading()}
-      
     </>
 )
 

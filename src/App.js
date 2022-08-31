@@ -1,12 +1,13 @@
 import './App.css';
 import Profile from './components/Profile'
 import Logs from './components/Logs'
+import Nav from './components/Nav'
+
 
 function App() {
   return (
     <div className="App">
-      <h1>WASSUP</h1>
-      <Profile />
+      <Profile /> <Nav />
       <Logs />
     </div>
   );
