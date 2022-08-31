@@ -27,7 +27,7 @@
     width:200px
 }
 .component {
-    width: 160px;
+    width: 167px;
 }
 .log-name {
     display: flex;
@@ -42,3 +42,12 @@
     background-color: #3BC6A7;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+.component-image {
+    width:250px;
+    height:250px;
+}
+

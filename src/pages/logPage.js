@@ -58,7 +58,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
         /><br /> */}
     <div className="input-left">
     <label>
-        Component Name 
+        {/* Component Name 
         <select className='component'
           type="text"
           value={updateForm.component}
@@ -67,7 +67,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             <option value='hi'> -- Select a Component -- </option>
             {data.map((component) => <option key={component.component}value={component.component}>{component.component}</option>)}
            
-            </select>
+            </select> */}
             
             </label><br />
     <label>
@@ -77,7 +77,6 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.start}
             onChange={handleChange}
             name="start"
-            placeholder="8:00am"
         /></label><br />
         <label>
           End Time
@@ -86,7 +85,6 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.end}
             onChange={handleChange}
             name="end"
-            placeholder="4:00pm"
         /></label><br />
         </div>
         <div className="input-center">
@@ -115,7 +113,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.volts}
             onChange={handleChange}
             name="volts"
-            placeholder="120V"
+            placeholder="120"
         />V</label><br />
          <label>
           Amperage Reading
@@ -124,7 +122,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.amps}
             onChange={handleChange}
             name="amps"
-            placeholder="20A"
+            placeholder="20"
         />A</label><br />
           <label>
           Pressure Reading
@@ -133,7 +131,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.pressure}
             onChange={handleChange}
             name="pressure"
-            placeholder="200Bar"
+            placeholder="200"
         />Bar</label><br />
         <label>
           Ohm Reading
@@ -142,7 +140,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             value={updateForm.ohms}
             onChange={handleChange}
             name="ohms"
-            placeholder="200ohms"
+            placeholder="200"
         />Ohms</label><br />
         {/* <input 
             type="text"
