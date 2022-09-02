@@ -10,10 +10,7 @@ function Profile(props) {
       <Link style={{textDecoration:'none', color: '#353558'}} to="/">
         <div className="nav-item">Edit Profile</div>
       </Link>
-      <Link style={{textDecoration:'none', color: '#353558'}} to="/logs">
-        <div className="nav-item">View Site Logs</div>
-      </Link>
-      <Link style={{textDecoration:'none', color: '#353558'}} to="/logs/newLog">
+      <Link style={{textDecoration:'none', color: '#353558'}} to="/learningMaterial">
         <div className="nav-item">Learning Material</div>
       </Link>
     </nav>

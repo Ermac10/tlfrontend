@@ -1,3 +1,18 @@
+tr {
+    width:100px;
+}
+td {
+    color: #0F0736;
+    width: 500px;
+    font-size: 14px;
+    text-align: center;
+    border-style:groove;
+    border-color: #825A9A;
+    background-color: #9CDBFA;
+    margin:0px;
+    padding:0px;
+}
+
 .create-log {
     position:absolute;
     top: 75%;
@@ -32,22 +47,32 @@
 .log-name {
     display: flex;
     justify-content: center;
+    margin-top: 21.440px;
 }
 .all-logs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    width:77%;
+    border: solid 2px;
+    border-color: #825A9A;
+    margin:auto;
 }
 .all-logs :hover {
     background-color: #3BC6A7;
-    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
 }
 .image-container {
     display: flex;
     justify-content: center;
+    
 }
 .component-image {
-    width:250px;
-    height:250px;
+    width:200px;
+    height:200px;
+    margin:auto;
 }
-
+.title {
+    text-align: center;
+}
+ul {
+    display: flex;
+    justify-content: center;
+}

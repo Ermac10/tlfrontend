@@ -17,13 +17,62 @@ function LogPage({ Logs, deleteLog, updateLog }) {
     returned: ""
   })
 
+  const data = [
+    {component: 'Anemometer', image: '/FT722_FT742-FF.png'},
+    {component: 'Wind Vane', image: '/WindVane.jpeg'},
+    {component: 'Blade 1', image: '/blade2.png'},
+    {component: 'Blade 2', image: '/blade2.png'},
+    {component: 'Blade 3', image: '/blade2.png'},
+    {component: 'Nacelle', image: '/nacelle.png'},
+    {component: 'Pad Mount Transformer', image: '/padmount.png'},
+    {component: 'PLC', image: '/plc.png'},
+    {component: 'Synchornization Contactor', image: '/gridcontactor copy.jpg'},
+    {component: 'Main Disconnect Breaker', image: '/acb.jpeg'},
+    {component: 'Yaw Limit Switch', image: '/rotorarylimitswitch.png'},
+    {component: 'Yaw Caliper', image: '/yawcaliper.jpeg'},
+    {component: 'Chain Hoist', image: '/chainhoist.png'},
+    {component: 'Yaw Motor', image: '/yawmotor.jpg'},
+    {component: 'Main Shaft', image: '/mainshaft.jpeg'},
+    {component: 'Main Bearing', image: '/mainbearing.png'},
+    {component: 'Gearbox', image: '/gearbox.jpg'},
+    {component: 'Shrink Disc', image: '/shrinkdisc.png'},
+    {component: 'Gearbox Heat Exchanger', image: '/oilcooler.jpeg'},
+    {component: 'High Speed Disc', image: '/couplerhighspeeddisc.gif'},
+    {component: 'High Speed Brake Caliper', image: '/highspeedbrakecaliper.png'},
+    {component: 'Rotor Lock', image: '/rotorlock.png'},
+    {component: 'Coupler', image: '/couplerhighspeeddisc.gif'},
+    {component: 'Generator', image: '/generator.png'},
+    {component: 'Generator Slip Ring', image: '/genslipring.png'},
+    {component: 'Generator Brushes', image: '/genbrushes.png'},
+    {component: 'Slip Ring', image: '/slipring.png'},
+    {component: 'Rotorary Union', image: '/rotary-union-rotodisk-s.png'},
+    {component: 'Variable Frequency Drive', image: '/vfd.png'},
+    {component: 'PT100', image: '/pt100.png'},
+    {component: 'Hydraulic Motor', image: '/hydraulicmotor.png'},
+    {component: 'Pressure Sensor', image: '/pressuresensor.png'},
+    {component: 'Hydraulic Oil Heat Exchanger', image: '/oilcooler.jpeg'},
+    {component: 'Accumulator', image: '/accumulator.png'},
+    {component: 'Hydraulic oil Filter', image: '/HydraulicOilFilter.avif'},
+    {component: 'Gearbox Oil Filter', image: '/HydraulicOilFilter.avif'},
+    {component: 'Brake Pads', image: '/brakepads.png'},
+    {component: 'Contactor', image: '/motorcontactor.png'},
+    {component: 'Relay', image: '/relay.jpg'},
+    {component: 'Pitch Motor', image: '/pitchmotor.png'},
+    {component: 'Pitch Ram', image: '/pitchram.png'},
+    {component: 'Battery', image: '/pitchbattery.png'},
+    {component: 'Pitch Limit Switch', image: '/limitswitch.png'},
+    {component: 'Pitch Gearbox', image: '/pitchgbx.jpg'},
+    {component: 'Fuse', image: '/fuse.png'},
+    {component: 'Pitch Motor Brake', image: '/pitchmotorbrake.jpg'},
+    {component: 'Bearing', image: '/bearings.png'},
+  ];
+
   const { id } = useParams()
   const navigate = useNavigate()
   const log = Logs.find(p =>p._id === id)
-
   const handleDelete = () => {
     deleteLog(id)
-    navigate('/')
+    navigate('/logs')
   }
 
   const handleChange = event => {
@@ -35,18 +84,30 @@ function LogPage({ Logs, deleteLog, updateLog }) {
   const handleUpdate = event => {
     event.preventDefault()
     updateLog(id, updateForm)
-   
+    navigate('/logs')
   }
 
   useEffect(() => {
-    setUpdateForm(log)
+    setUpdateForm(log);
   }, [Logs, log])
+
+  const [image, setImage] = useState('');
+
+  useEffect(() => {
+    data.map(image => {
+      if(image.component === log.component) {
+       setImage(image.image)
+      } 
+    });
+  }, [])
 
   return (
   <div className='log'>
     <h1 className='log-name'>{log.component}</h1>
-    {/* <img className='log-image' src={log.image} alt={log.component} /> */}
-    
+    <div className='image-container'>
+    <img className='component-image' src={image} alt={log.component} />
+    </div>
+<section>
     <form onSubmit={handleUpdate} className="create-log">
    
     {/* <input 
@@ -153,6 +214,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
         
        
     </form>
+    </section>
   </div>
     );
   }

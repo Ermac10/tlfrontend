@@ -11,7 +11,7 @@ function Nav(props) {
         <div className="nav-item2">Home</div>
       </Link>
       <Link style={{textDecoration:'none', color: '#353558'}} to="/logs">
-        <div className="nav-item2">View Turbine Logs</div>
+        <div className="nav-item2">View Site Logs</div>
       </Link>
       <Link style={{textDecoration:'none', color: '#353558'}} to="/logs/newLog">
         <div className="nav-item2">Create New Log</div>

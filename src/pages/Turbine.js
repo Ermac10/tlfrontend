@@ -16,6 +16,7 @@ function Turbine(props) {
     ohms: "",
     returned: ""
   })
+  
   const data = [
     {component: 'Anemometer', image: '/FT722_FT742-FF.png'},
     {component: 'Wind Vane', image: '/WindVane.jpeg'},
@@ -36,38 +37,34 @@ function Turbine(props) {
     {component: 'Gearbox', image: '/gearbox.jpg'},
     {component: 'Shrink Disc', image: '/shrinkdisc.png'},
     {component: 'Gearbox Heat Exchanger', image: '/oilcooler.jpeg'},
-    // {component: 'High Speed Disc', image: '26'},
-    // {component: 'High Speed Brake Caliper', image: '27'},
-    // {component: 'Rotor Lock', image: '28'},
-    // {component: 'Coupler', image: '29'},
-    // {component: 'Generator', image: '30'},
-    // {component: 'Generator Cooling System', image: '31'},
-    // {component: 'Generator Slip Ring', image: '32'},
-    // {component: 'Generator Brushes', image: '33'},
-    // {component: 'Top Box', image: '34'},
-    // {component: 'Slip Ring', image: '35'},
-    // {component: 'Rotorary Union', image: '36'},
-    // {component: 'Variable Frequency Drive', image: '37'},
-    // {component: 'PT100', image: '38'},
-    // {component: 'Hydraulic Motor', image: '39'},
-    // {component: 'Hydraulic Tank', image: '40'},
-    // {component: 'Pressure Sensor', image: '41'},
-    // {component: 'Hydraulic Oil Heat Exchanger', image: '42'},
-    // {component: 'Accumulator', image: '43'},
-    // {component: 'Hydraulic oil Filter', image: '44'},
-    // {component: 'Gearbox Oil Filter', image: '45'},
-    // {component: 'Brake Pads', image: '46'},
-    // {component: 'Contactor', image: '47'},
-    // {component: 'Relay', image: '48'},
-    // {component: 'Pitch Motor', image: '49'},
-    // {component: 'Pitch Ram', image: '50'},
-    // {component: 'Battery', image: '51'},
-    // {component: 'Pitch Limit Switch', image: '52'},
-    // {component: 'Pitch Gearbox', image: '53'},
-    // {component: 'Fuse', image: '54'},
-    // {component: 'Pitch Motor Brake', image: '55'},
-    // {component: 'Bearing', image: '56'},
-    // {component: 'Ambilical Line', image: '57'}
+    {component: 'High Speed Disc', image: '/couplerhighspeeddisc.gif'},
+    {component: 'High Speed Brake Caliper', image: '/highspeedbrakecaliper.png'},
+    {component: 'Rotor Lock', image: '/rotorlock.png'},
+    {component: 'Coupler', image: '/couplerhighspeeddisc.gif'},
+    {component: 'Generator', image: '/generator.png'},
+    {component: 'Generator Slip Ring', image: '/genslipring.png'},
+    {component: 'Generator Brushes', image: '/genbrushes.png'},
+    {component: 'Slip Ring', image: '/slipring.png'},
+    {component: 'Rotorary Union', image: '/rotary-union-rotodisk-s.png'},
+    {component: 'Variable Frequency Drive', image: '/vfd.png'},
+    {component: 'PT100', image: '/pt100.png'},
+    {component: 'Hydraulic Motor', image: '/hydraulicmotor.png'},
+    {component: 'Pressure Sensor', image: '/pressuresensor.png'},
+    {component: 'Hydraulic Oil Heat Exchanger', image: '/oilcooler.jpeg'},
+    {component: 'Accumulator', image: '/accumulator.png'},
+    {component: 'Hydraulic oil Filter', image: '/HydraulicOilFilter.avif'},
+    {component: 'Gearbox Oil Filter', image: '/HydraulicOilFilter.avif'},
+    {component: 'Brake Pads', image: '/brakepads.png'},
+    {component: 'Contactor', image: '/motorcontactor.png'},
+    {component: 'Relay', image: '/relay.jpg'},
+    {component: 'Pitch Motor', image: '/pitchmotor.png'},
+    {component: 'Pitch Ram', image: '/pitchram.png'},
+    {component: 'Battery', image: '/pitchbattery.png'},
+    {component: 'Pitch Limit Switch', image: '/limitswitch.png'},
+    {component: 'Pitch Gearbox', image: '/pitchgbx.jpg'},
+    {component: 'Fuse', image: '/fuse.png'},
+    {component: 'Pitch Motor Brake', image: '/pitchmotorbrake.jpg'},
+    {component: 'Bearing', image: '/bearings.png'},
   ];
 
   // const loaded = () => {
@@ -88,7 +85,9 @@ function Turbine(props) {
   const [selected, setSelected] = useState(0);
     
   const handleSelected = (event) => {
-    setSelected(event.target.value);
+    let index = data.map(item => item.component).indexOf(event.target.value)
+     
+    setSelected(index);
     setNewForm((prevState) => ({
       ...prevState,
       [event.target.name]: event.target.value
@@ -103,7 +102,6 @@ function Turbine(props) {
     }))
   }
   const navigate = useNavigate()
-  
   const handleSubmit = event => {
   
     event.preventDefault()
@@ -115,12 +113,11 @@ function Turbine(props) {
 
     return (
       <>
+      <h1 className='title' key='Create'>Create Log Entry</h1>
       <div className='image-container'>
-      <img  className='component-image' key={data.component} src={data[selected].image} />
+      <img  className='component-image' key={data.component} src={data[selected].image}  />
       </div>
     <section>
-      
-      {/* {data.map((component) => <img key={component.component} src={component.image}/>)} */}
       <form onSubmit={handleSubmit} className="create-log">
       {/* <input 
             type="text"
@@ -130,25 +127,15 @@ function Turbine(props) {
             placeholder="Yes or No"
         /><br /> */}
     <div className="input-left">
-      {/* <label>
-        Component Name 
-      <input className='component'
-            type="text"
-            value={newForm.component}
-            onChange={handleChange}
-            name="component"
-            placeholder="Yaw motor"
-        /></label><br /> */}
          <label>
         Component Name 
         <select className='component'
           type="text"
-          value={selected}
+          value={newForm.component}
           onChange={handleSelected}
           name="component">
             <option value='component'> -- Select a Component -- </option>
-            {data.map((component, index) => <option key={component.component}value={index}>{component.component}</option>)}
-            
+            {data.map((component) => <option key={component.component}value={component.component} >{component.component}</option>)}
             </select>
             </label><br />
       <label>
@@ -161,13 +148,22 @@ function Turbine(props) {
             placeholder="8:00am"
         /></label><br />
         <label>
-          End Time
+          End Time 
          <input 
             type="time"
             value={newForm.end}
             onChange={handleChange}
             name="end"
             placeholder="4:00pm"
+        /></label><br />
+         <label>
+        Turbine Number
+        <input
+            type="number"
+            value={newForm.turbine}
+            onChange={handleChange}
+            name="turbine"
+            placeholder="1"
         /></label><br />
         </div>
         <div className="input-center">
@@ -183,7 +179,7 @@ function Turbine(props) {
         /></label><br />
          <input className="input"
             type="submit"
-            value="Add Log"
+            value="Create Log"
             style={{marginTop:'0px'}}
         /><br />
         </div>
@@ -224,21 +220,13 @@ function Turbine(props) {
             name="ohms"
             placeholder="200ohms"
         />Ohms</label><br />
-         {/* <input 
-            type="text"
-            value={newForm.image}
-            onChange={handleChange}
-            name="image"
-            placeholder="Happy Turbine.png"
-        /><br /> */}
-        </div>            
+       </div>            
       </form>
       
       {/* {props.Logs ? loaded() : loading()} */}
     </section>
     </>
     )
-    
   }
   
   export default Turbine;
