@@ -14,7 +14,9 @@ function Logs(props) {
   
   const getLogs = async () => {
     try {
-        const response = await fetch(API_URL)
+        const response = await fetch(API_URL, {
+          mode: "no-cors"
+        })
         const data = await response.json()
         setLogs(data)
     } catch (error) {
