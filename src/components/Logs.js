@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Turbine from "../pages/Turbine";
 import LogPage from "../pages/logPage";
 import AllLogs from "../pages/allLogs"
-import Home from "../pages/home"
-import LearningMaterial from "../pages/learningMaterial"
+import Home from "../pages/home";
+import LearningMaterial from "../pages/learningMaterial";
+// import Login from "../pages/login"
 
 function Logs(props) {
   const [ Logs, setLogs ] = useState(null) // rule of thumb: when state has data and that data is an object, null is the best way to represent
@@ -66,7 +67,8 @@ const updateLog = async (id, updatedLog) => {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<Home Logs={Logs} createLogs={createLogs} />}/>
+        {/* <Route path="/" element={<Login/>}/> */}
+        <Route path="/home" element={<Home Logs={Logs} createLogs={createLogs} />}/>
         <Route path="/logs/newLog" element={<Turbine Logs={Logs} createLogs={createLogs} />}/>
         <Route path="/logs/:id" element={<LogPage Logs={Logs} deleteLog={deleteLog} updateLog={updateLog}/>} />
         <Route path="/logs" element={<AllLogs Logs={Logs} getLogs = {getLogs} deleteLog={deleteLog} updateLog={updateLog}/>} />

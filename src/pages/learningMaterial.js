@@ -103,9 +103,9 @@ function LearningMaterial(props) {
       <img  className='component-image' key={data.component} src={data[selected].image}  />
       </div>
       <div>
-      <ul>
+      <ul  style={{listStyleType: 'none', justifyItems: 'center'}}>
         <li classNmae='videos' key='videos'>
-        <a href={data[selected].link} target="_blank">Video Link</a>
+        <a href={data[selected].link} target="_blank" style={{textDecoration:'none', color: '#353558 ', fontSize:'x-large', border: 'ridge 3px #3BC6A7', backgroundColor: '#DCEDF9'}}>Video Link </a>
         </li>
       </ul>
       </div>

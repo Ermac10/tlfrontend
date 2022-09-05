@@ -158,7 +158,7 @@ function Turbine(props) {
         /></label><br />
          <label>
         Turbine Number
-        <input
+        <input className='tnumber'
             type="number"
             value={newForm.turbine}
             onChange={handleChange}

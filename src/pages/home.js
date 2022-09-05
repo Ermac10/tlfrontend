@@ -1,9 +1,9 @@
 function Home(props) {
 
 return (
-    <div>
-        <h1>Hello</h1>
-        <img src='/FB_IMG_1634827650813.jpg' />
+    <div className='home'>
+        {/* <img className='home-image' src='/FB_IMG_1661874097529.jpg'/> */}
+        
     </div>
 )
 

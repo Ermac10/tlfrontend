@@ -1,14 +1,33 @@
+html {
+    background-image: url("/public/FB_IMG_1661874097529.jpg");
+    background-blend-mode:darken;
+    /* background-image: url("/public/FB_IMG_1634827650813.jpg");
+    background-blend-mode: luminosity; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center center;
+    background-size: contain;
+    background-color: #DCEDF9;
+}
+h1 {
+    font-size:50px;
+}
+
+h4 {
+    font-size:30px;
+}
+
 tr {
-    width:100px;
+    text-decoration: none;
 }
 td {
-    color: #0F0736;
-    width: 500px;
-    font-size: 14px;
+    color: #353558;
+    width: 200px;
+    font-size: 18px;
     text-align: center;
-    border-style:groove;
-    border-color: #825A9A;
-    background-color: #9CDBFA;
+    border:ridge 7px;
+    border-color: #3BC6A7;
+    background-color: #DCEDF9;
     margin:0px;
     padding:0px;
 }
@@ -22,6 +41,7 @@ td {
     display:flex;
     flex-direction: row;
     align-items: center;
+    font-family: 'Shadows Into Light Two', cursive;
 }
 .input-left {
     display: flex;
@@ -51,9 +71,6 @@ td {
 }
 .all-logs {
     justify-content: center;
-    width:77%;
-    border: solid 2px;
-    border-color: #825A9A;
     margin:auto;
 }
 .all-logs :hover {
@@ -66,13 +83,31 @@ td {
 }
 .component-image {
     width:200px;
-    height:200px;
-    margin:auto;
+    height:175px;
 }
 .title {
     text-align: center;
+    font-family: 'Covered By Your Grace', cursive;
+    color: #353558;
+    text-shadow: 2px 2px 2px  #3BC6A7
 }
 ul {
     display: flex;
     justify-content: center;
 }
+input,textarea, select{
+    border: ridge 3px #3BC6A7   ;
+}
+.tnumber {
+    width: 155px;
+}
+.nav {
+    font-family: 'Shadows Into Light Two', cursive;
+}
+/* .home-image {
+    display: flex;
+    margin:auto;
+    background-size: contain;
+    background-color: #DCEDF9;
+    background-blend-mode:color-dodge;
+} */

@@ -103,7 +103,7 @@ function LogPage({ Logs, deleteLog, updateLog }) {
 
   return (
   <div className='log'>
-    <h1 className='log-name'>{log.component}</h1>
+    <h1 className='title'>{log.component}</h1>
     <div className='image-container'>
     <img className='component-image' src={image} alt={log.component} />
     </div>
@@ -118,19 +118,8 @@ function LogPage({ Logs, deleteLog, updateLog }) {
             placeholder="Yes or No"
         /><br /> */}
     <div className="input-left">
-    <label>
-        {/* Component Name 
-        <select className='component'
-          type="text"
-          value={updateForm.component}
-          onChange={handleChange}
-          name="component">
-            <option value='hi'> -- Select a Component -- </option>
-            {data.map((component) => <option key={component.component}value={component.component}>{component.component}</option>)}
-           
-            </select> */}
-            
-            </label><br />
+    <label>            
+    </label><br />
     <label>
         Start Time
     <input 
