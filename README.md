@@ -33,10 +33,14 @@ An app that allows the user to create logs describing troubleshooting activities
 ![ERD](public/ERD.png)
 
 # Screenshots
+![HomePage] (public/Screen Shot Home.png)
+![LearningMaterial] (public/ScreenShot- LearningMaterial.png)
+![AllLogs] (public/ScreenShot-AllLogs.png)
+![CreateLogs] (public/ScreenShot-CreateLog.png)
 
 
 # Getting Started
-[Click Here] () to use the Turbine Log Book
+[Click Here] (https://glacial-scrubland-11921.herokuapp.com/home) to use the Turbine Log Book
 [Click Here] (https://github.com/Ermac10/tlbackend.git) to view the backend code
 [Click Here] (https://github.com/Ermac10/tlfrontend.git) to view the frontend code
 
