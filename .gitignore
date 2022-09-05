@@ -7,19 +7,6 @@ Color Pallette
 #353558 - Space Cadet
 
 
- <label>
-        Component Name 
-      <select className='component'>
-            type="text"
-            value={newForm.component}
-            onChange={handleChange}
-            name="component"
-            placeholder="Yaw motor"
-            <option value='Select a Component'>Select A Component</option>
-            {Component.map((component) => <option value={component.component}></option>)}
-            </select></label><br />
-
-
 # dependencies
 /node_modules
 /.pnp
