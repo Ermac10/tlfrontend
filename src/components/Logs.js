@@ -10,7 +10,8 @@ import LearningMaterial from "../pages/learningMaterial";
 function Logs(props) {
   const [ Logs, setLogs ] = useState(null) // rule of thumb: when state has data and that data is an object, null is the best way to represent
   // const API_URL = 'http://localhost:4000/api/logBook'
-  const API_URL = 'https://git.heroku.com/afternoon-tundra-96240.git'
+  const API_URL = 'https://afternoon-tundra-96240.herokuapp.com/api/logbook'
+  
   
   const getLogs = async () => {
     try {
