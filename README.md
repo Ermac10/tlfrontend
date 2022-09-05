@@ -33,7 +33,7 @@ An app that allows the user to create logs describing troubleshooting activities
 ![ERD](public/ERD.png)
 
 # Screenshots
-![HomePage] (public/Home.png)
+![Home] (/public/Home.png)
 ![LearningMaterial] (public/ScreenShot- LearningMaterial.png)
 ![AllLogs] (public/ScreenShot-AllLogs.png)
 ![CreateLogs] (public/ScreenShot-CreateLog.png)
