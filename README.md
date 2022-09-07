@@ -34,7 +34,7 @@ An app that allows the user to create logs describing troubleshooting activities
 
 # Screenshots
 ![Home](public/Home.png)
-![LearningMaterial](public/ScreenShot- LearningMaterial.png)
+![LearningMaterial](public/LearningMaterial.png)
 ![AllLogs](public/ScreenShot-AllLogs.png)
 ![CreateLogs](public/ScreenShot-CreateLog.png)
 
